@@ -1,0 +1,61 @@
+
+
+/* book inventory */
+create database book_inv;
+
+use book_inv;
+
+CREATE TABLE admin (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+insert into admin(username,password) values("admin","admin");
+select * from admin;
+
+CREATE TABLE books (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    author VARCHAR(255) NOT NULL,
+    price INT NOT NULL,
+    category VARCHAR(255) NOT NULL,
+    status BOOLEAN DEFAULT true NOT NULL
+);
+
+select * from books;
+
+
+/*sample data*/
+insert into books(name,author,price,category) values("Harry Potter","J.K.Rowling",300,"Fantasy");
+insert into books(name,author,price,category) values("Book1","J.K.",600,"Fantasy");
+insert into books(name,author,price,category) values("Book2","jjk",200,"Comedy");
+
+select * from books;
+
+CREATE TABLE review (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    review TEXT NOT NULL,
+    rating INT NOT NULL,
+    Bookname VARCHAR(255) NOT NULL
+);
+
+/*sampele data*/
+insert into review(name,review,rating,Bookname) values("sdf","good",5,"Harry Potter");
+insert into review(name,review,rating,Bookname) values("sdfg","good",5,"Olympus");
+
+select * from review;
+
+CREATE TABLE user_details (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(255) NOT NULL,
+    lastname VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    phone BIGINT,
+    address TEXT
+);
+/* sample data */
+insert into user_details(firstname,lastname,email,password,phone,address) values("den","mark","den@abc.com","password",9876543210,"15,abc city,india");
+
+select * from user_details;
